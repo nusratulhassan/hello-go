@@ -2,7 +2,7 @@ name: Go Docker Image CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master ] # change me
 
 jobs:
 
@@ -10,13 +10,13 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: golan
+      IMAGE_NAME: golan # change me
       IMAGE_TAG: ${{ github.run_number }}
       DOCKER_REPOSITORY: ${{ secrets.DOCKER_USERNAME }}
-      TAG_PREFIX: dev
-      ARGOCD_ENDPOINT: argocd.strategy22.com #without https
+      TAG_PREFIX: dev #change me
+      ARGOCD_ENDPOINT: argocd.strategy22.com #without https #change me
       INSECURE: true
-      APP_NAME: gola
+      APP_NAME: gola #change me
 
     permissions:
       # Give the default GITHUB_TOKEN write permission to commit and push the
