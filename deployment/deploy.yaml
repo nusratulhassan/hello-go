@@ -1,3 +1,4 @@
+## chane golang-dev, regcred02, varu33333/golan,go-srv, go-ingress , host
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,7 +18,7 @@ spec:
     spec:
       containers:
       - name: go-hello-cnt
-        image: varu33333/golan:dev-16
+        image: varu33333/golan:dev-19
       imagePullSecrets:
       - name: regcred02
 ---
