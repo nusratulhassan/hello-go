@@ -2,7 +2,7 @@ name: Go Docker Image CI
 
 on:
   push:
-    branches: [ production ]
+    branches: [ master ]
 
 jobs:
 
@@ -13,7 +13,7 @@ jobs:
       IMAGE_NAME: golan
       IMAGE_TAG: ${{ github.run_number }}
       DOCKER_REPOSITORY: ${{ secrets.DOCKER_USERNAME }}
-      TAG_PREFIX: prod
+      TAG_PREFIX: dev
       ARGOCD_ENDPOINT: argocd.strategy22.com #without https
       INSECURE: true
       APP_NAME: gola

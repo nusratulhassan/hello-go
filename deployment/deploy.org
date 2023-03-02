@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: golang-prod
-  namespace: golang-prod
+  name: golang-dev
+  namespace: golang-dev
   labels:
-    app: golang-prod
+    app: golang-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: golang-prod
+      app: golang-dev
   template:
     metadata:
       labels:
-        app: golang-prod
+        app: golang-dev
     spec:
       containers:
       - name: go-hello-cnt
@@ -25,7 +25,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: go-srv
-  namespace: golang-prod
+  namespace: golang-dev
 spec:
   ports:
     - name: tcp-8080-8080
@@ -33,19 +33,19 @@ spec:
       port: 8080
       targetPort: 8080
   selector:
-    app: golang-prod
+    app: golang-dev
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: go-ingress
-  namespace: golang-prod
+  namespace: golang-dev
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   ingressClassName: nginx
   rules:
-  - host: go-prod.strategy22.com
+  - host: go-dev.strategy22.com
     http:
       paths:
       - pathType: Prefix
