@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: go-hello-cnt
-        image: varu33333/golan:dev-21
+        image: varu33333/golan:dev-23
       imagePullSecrets:
       - name: regcred02
 ---
